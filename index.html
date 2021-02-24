@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Bond Web Service Demo</title>
+<link rel="stylesheet" href="css/bond.css"/>
 <style>
 body {font-family:georgia;}
 </style>
@@ -22,8 +23,6 @@ function serverSetup(server,cat){
    }
    return url;
 }
-
-
 
 
 $(document).ready(function() {  
@@ -65,7 +64,25 @@ function toConsole(data)
 
 function bondJSON(data){
 //JSON processing data goes here
-	toConsole(data);
+	//toConsole(data);
+	//$("#output").text(JSON.stringify(data));
+	$.each(data.films,function(i, item){
+
+		let text = `
+				
+				<b>Title:</b> ${item.Title}<br />
+				<b>Film #:</b> ${item.Film}<br />
+				<b>Year:</b> ${item.Year}<br />
+				<b>Bond:</b> ${item.Bond}<br />
+				<b>Box Office:</b> ${item.BoxOffice}<br />
+				<b>Writers:</b> ${item.Writers}<br />
+				<div class="pic"><img src="thumbnails/a-view-to-a-kill.jpg"/>
+				
+	
+		`;
+		$("<div></div>").html(text).appendTo("#films");
+
+	});
 }
 
 </script>
@@ -76,7 +93,8 @@ function bondJSON(data){
 		<a href="box" class="category">Bond Films By International Box Office Totals</a>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
-			<p>Films will go here</p>
+
+			</div>
 		</div>
 		<div id="output">Results go here</div>
 	</body>
