@@ -1,4 +1,9 @@
-body {font-family:georgia;}
+body {
+	font-family:georgia;
+	background-color: rgb(247, 246, 228);
+	padding: 20px;
+	margin: auto;
+}
 #restaurants {
 	max-width:600px;
 	margin:5px;
@@ -28,7 +33,7 @@ body {font-family:georgia;}
 	width: 50px;
 	position: relative;
 	text-align: left;
-	float:right;
-	clear:both;
+
 
 }
+

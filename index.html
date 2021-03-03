@@ -16,7 +16,7 @@ function serverSetup(server,cat){
        url = "api.php?cat=" + cat;
    }else{//server is HTML only - simulate web service
        if(cat == "box"){//box office
-           url = "data/bond-box-office.js";
+           url = "data/restaurant-name.js";
        }else{//year
            url = "data/restaurant-rating.js"; 
        }
@@ -82,7 +82,7 @@ function bondJSON(data){
 				<b>Address:</b> ${item.Address}<br />
 				<b>Rating:</b> ${item.Rating}<br />
 				<b>Cuisine:</b> ${item.Cuisine}<br />
-				<div class="pic" style="width:300px; text-align:left;"><img src="images/${item.Image}"/></div>
+				<div class="pic" width="200" ><img src="images/${item.Image}"/></div>
 				
 		`;
 		$("<div></div>").html(text).appendTo("#restaurants");
@@ -93,14 +93,16 @@ function bondJSON(data){
 </script>
 </head>
 	<body>
-	<h1>Bond Web Service</h1>
+		<div class="heading" style="text-align: center">
+	<h1>Top 10 Restaurants To Eat At When You Visit Seattle!</h1>
 		<a href="restaurants" class="category">Restaurant By Rating</a><br />
-		<a href="box" class="category">Bond Films By International Box Office Totals</a>
-		<h3 id="filmtitle">Title Will Go Here</h3>
+		<a href="box" class="category">Restaurant By Name</a>
+	</div>
+		<h3 id="filmtitle"></h3>
 		<div id="restaurants">
 
 			</div>
 		</div>
-		<div id="output">Results go here</div>
+		<div id="output"></div>
 	</body>
 </html>
